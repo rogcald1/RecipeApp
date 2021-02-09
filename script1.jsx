@@ -59,12 +59,15 @@ class RecipeApp extends React.Component {
     
     });
 		
-    let ingURL = this.state.ingredients.join(',');
-    console.log(`http://www.recipepuppy.com/api/?i=${ingURL}`);
+    let ingURL = this.state.ingredients.join('%2C');
+    console.log(`"https://recipe-puppy.p.rapidapi.com/?i=${ingURL}"`);
     
-    fetch(`https://cors-anywhere.herokuapp.com/http://www.recipepuppy.com/api/?i=${ingURL}`, {
+    fetch(`https://recipe-puppy.p.rapidapi.com/?i=${ingURL}`, {
         method: "GET",
-        Origin: 'fetch'
+        headers: {
+            "x-rapidapi-key": "8f2e83a805msh0a2a740a775aaafp1b09e8jsn0dfb5ac10187",
+		    "x-rapidapi-host": "recipe-puppy.p.rapidapi.com"
+        }
     })
     	.then ((res) => res.json())
         .then ((data) => {
