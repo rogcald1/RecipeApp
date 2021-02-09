@@ -62,7 +62,10 @@ class RecipeApp extends React.Component {
     let ingURL = this.state.ingredients.join(',');
     console.log(`http://www.recipepuppy.com/api/?i=${ingURL}`);
     
-    fetch(`http://www.recipepuppy.com/api/?i=${ingURL}`)
+    fetch(`https://cors-anywhere.herokuapp.com/http://www.recipepuppy.com/api/?i=${ingURL}`, {
+        method: "GET",
+        Origin: 'fetch'
+    })
     	.then ((res) => res.json())
         .then ((data) => {
         
