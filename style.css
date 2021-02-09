@@ -1,0 +1,29 @@
+button {
+    margin-top: 1.5em;
+    margin-right: 0.5em;
+  }
+.ingredientList {
+    padding-left: 0;
+    margin-left: -20px;
+  }
+ul {
+    list-style-type: square;
+}
+ul.resList {
+    margin-left: -20px;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: black;
+}
+a:visited {
+    color: grey;
+}
+a:hover {
+    color: red;
+}
+.error {
+    color: red;
+}
