@@ -154,8 +154,9 @@ class Header extends React.Component {
   render() {
   	return(
     	<div>
-    	  <h2 className='header'>Roger's Recipe App</h2>
-        <h4 className='dir'>Please input individual ingredients below and submit:</h4>
+    	    <h2 className='header'>Roger's Recipe App</h2>
+            <h4 className='dir'>Please submit your ingredients one at a time below,</h4>
+            <h4 className='dir2'>and we'll pull up some recipes containing those ingredients!</h4>
     	</div>
     )
   }
