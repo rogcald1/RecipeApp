@@ -61,7 +61,8 @@ class RecipeApp extends React.Component {
     fetch(`https://recipe-puppy.p.rapidapi.com/?i=${ingURL}`, {
         method: "GET",
         headers: {
-            // "x-rapidapi-key": "8f2e83a805msh0a2a740a775aaafp1b09e8jsn0dfb5ac10187",
+            // this API key is old - need to figure out how to hide it
+            // "x-rapidapi-key": "",
 		    "x-rapidapi-host": "recipe-puppy.p.rapidapi.com"
         }
     })
