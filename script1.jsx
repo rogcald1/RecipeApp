@@ -24,7 +24,6 @@ class RecipeApp extends React.Component {
 
       } else if (document.getElementById('form').value !== '') {
     
-    console.log(this.error);
     this.setState ({
     
 		ingredients: [...this.state.ingredients, document.getElementById('form').value], 
@@ -39,16 +38,14 @@ class RecipeApp extends React.Component {
 
   bulletList() {
   
-  if (this.state.recipePush === false) {
-    console.log("ingredients", this.state.ingredients);
   	let itemList = this.state.ingredients.map((x, i) => 
-    	<li key={i}>{x}</li>
-      );
-		return (
-    	<ul>{itemList}</ul>
-    );                                          
-    }
-	}
+      <li key={i}>{x}</li>
+    )
+        
+    return (
+        <ul>{itemList}</ul>
+        )                                          
+    } 
       
   findRecipe() {
   	console.log('Finding Recipes');
@@ -60,7 +57,6 @@ class RecipeApp extends React.Component {
     });
 		
     let ingURL = this.state.ingredients.join('%2C');
-    console.log(`"https://recipe-puppy.p.rapidapi.com/?i=${ingURL}"`);
     
     fetch(`https://recipe-puppy.p.rapidapi.com/?i=${ingURL}`, {
         method: "GET",
@@ -95,7 +91,7 @@ class RecipeApp extends React.Component {
       
     let segment;
   	if (this.state.recipePush === false) {
-    	segment = "";
+    	segment = <Recipes recipeList=""/>;
     } else if (this.state.recipePush === true) {
     	segment = <Recipes recipeList={this.state.recipeList} />;
     }
@@ -176,16 +172,12 @@ class Recipes extends React.Component {
   
   render() {
 
-    console.log("recipelist", this.props.recipeList)
-
     let recTitles = [];
     let recLinks = [];
     for (let i=0 ; i < this.props.recipeList.length ; i++) {
         recTitles.push(this.props.recipeList[i].title);
         recLinks.push(this.props.recipeList[i].href);
     };
-
-    console.log(recTitles, recLinks);
 
   	return(
     	<div className="recipes">
