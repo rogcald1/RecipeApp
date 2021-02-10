@@ -38,9 +38,9 @@ class RecipeApp extends React.Component {
 
   bulletList() {
   
-  	let itemList = this.state.ingredients.map((x, i) => 
+  	let itemList = this.state.ingredients.map((x, i) => {
       <li key={i}>{x}</li>
-    )
+      })
         
     return (
         <ul>{itemList}</ul>
@@ -61,7 +61,7 @@ class RecipeApp extends React.Component {
     fetch(`https://recipe-puppy.p.rapidapi.com/?i=${ingURL}`, {
         method: "GET",
         headers: {
-            "x-rapidapi-key": "8f2e83a805msh0a2a740a775aaafp1b09e8jsn0dfb5ac10187",
+            // "x-rapidapi-key": "8f2e83a805msh0a2a740a775aaafp1b09e8jsn0dfb5ac10187",
 		    "x-rapidapi-host": "recipe-puppy.p.rapidapi.com"
         }
     })
