@@ -38,17 +38,17 @@ class RecipeApp extends React.Component {
 
   bulletList() {
   
-  	let itemList = this.state.ingredients.map((x, i) => {
+  	let itemList = this.state.ingredients.map((x, i) => 
       <li key={i}>{x}</li>
-      })
-        
+      );
     return (
         <ul>{itemList}</ul>
         )                                          
     } 
       
   findRecipe() {
-  	console.log('Finding Recipes');
+      console.log('Finding Recipes');
+      console.log(this.state.ingredients);
     
     this.setState ({
     
@@ -61,8 +61,7 @@ class RecipeApp extends React.Component {
     fetch(`https://recipe-puppy.p.rapidapi.com/?i=${ingURL}`, {
         method: "GET",
         headers: {
-            // this API key is old - need to figure out how to hide it
-            // "x-rapidapi-key": "",
+            "x-rapidapi-key": "f503a3e4aamshece48ec7e391cefp17bb7djsn58eadf14ee32",
 		    "x-rapidapi-host": "recipe-puppy.p.rapidapi.com"
         }
     })
@@ -146,7 +145,6 @@ class Ingredients extends React.Component {
     	</div>
     )
   }
-  
 }
 
 class Header extends React.Component {
